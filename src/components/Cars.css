@@ -1,0 +1,70 @@
+
+/* body .CarsBody{
+    background: #ffff;
+    height: 100vh;
+} */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 45px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.col-4 {
+    width: 33%;
+    margin: 5px;
+    /* height: 200px; */
+}
+.col-4:hover {
+    -ms-transform: scale(1.0); 
+    -webkit-transform: scale(1.0); 
+    transform: scale(1.2); 
+  }
+.CarsBody h1 {
+    height: 40px;
+    text-align: left;
+    font-size: 30px;
+    background-color:rgb(75, 98, 226); ;
+    color: white;
+    font-family: Cairo Black,;
+}
+
+.modal {
+    color: forestgreen;
+    text-align: center;
+    font-style: italic;
+}
+
+.button {
+    background-color: lightblue;
+    height: 40px;
+    position: relative;
+    left:607px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.button2 {
+    background-color: lightblue;
+    height: 40px;
+    position: relative;
+    left:470px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }

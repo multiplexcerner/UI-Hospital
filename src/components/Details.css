@@ -1,0 +1,60 @@
+.CADetails img{
+    position: relative;
+    top:5px;
+    left:5px;
+    height: 50px;
+    widows: 100px;
+}
+
+.CADetails a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.DetailsTable {
+    position: relative;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 0px solid #85e0e0;
+    /* background-color:  #ebfafa; */
+    text-align: left;
+    padding: 15px;
+  }
+
+  th{
+      color: white;
+      font-style: Bold;
+      background-color:#56b9b9 ;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ebfafa;
+  }
+  .details {
+      position: relative;
+      top:50px;
+      margin: 20px;
+  }
+
+  .details h2{
+    color:#56b9b9 ;
+  } 
+
+  .btn{
+      height: 25px;
+      width: 65px;
+      border: 0px;
+      font-style: bold;
+      font-size: 14px;
+      color:black;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ebfafa;
+  }
+  
