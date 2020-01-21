@@ -8,6 +8,7 @@ import Details from './components/Details';
 import AsterDetails from './components/AsterDetails';
 import ApolloDetails from './components/ApolloDetails';
 import FortisDetails from './components/FortisDetails';
+import Appointment from './components/Appointment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/asterDetails" exact component={AsterDetails} />
             <Route path="/fortisDetails" exact component={FortisDetails} />
             <Route path="/apolloDetails" exact component={ApolloDetails} />
+            <Route path="/appointment" exact component={Appointment} />
           </div>
       </BrowserRouter>
   );

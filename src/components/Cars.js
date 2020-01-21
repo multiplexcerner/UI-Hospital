@@ -16,34 +16,35 @@ class Cars extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.state={
-            imageURL:'',
+            details:[],
             open: false,
         };
     }
 
-//     componentDidMount(){
+    componentDidMount() {
+        let details;
+        axios.get('http://18.189.17.195:30081/hospital/all')
+        .then(response => {
+            details = response.data;
+            console.log('Response', details);
+            this.setState({ details: details });
+        })
+            .catch(error => {
+                console.log(error);
+            });
 
-//         axios.get('http://localhost:8082/get-docker-image')
-//         .then(response => {
-//             console.log('Response url', response.data);
-//             this.setState({imageURL: response.data});
-//         })
-//         .catch(error => {
-//             console.log(error);
-//         });
-       
-//    };
+    };
     handleClick(route){
         this.props.history.push("/" + route);
     }; 
     
-      onOpenModal = () => {
-        this.setState({ open: true });
-      };
+    //   onOpenModal = () => {
+    //     this.setState({ open: true });
+    //   };
     
-      onCloseModal = () => {
-        this.setState({ open: false });
-      };
+    //   onCloseModal = () => {
+    //     this.setState({ open: false });
+    //   };
 
     render() {
         const { open } = this.state;
@@ -56,7 +57,7 @@ class Cars extends React.Component {
               <div className="row">
                   <div className="col-4">
                       <img src={CAlogo} height="100" width="300" onClick={() => this.handleClick('details')}></img>
-                       <p>Address: abasgdhbfhjanbahan,msinfhs</p>
+                       {/* <p> {this.state.details[0].name} </p> */}
                   </div>
                   <div className="col-4">
                       <img src={asterlogo} height="100" width="300" onClick={() => this.handleClick('asterDetails')}></img>
