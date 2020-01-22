@@ -101,6 +101,7 @@ class Details extends React.Component {
                         <td>{this.state.details2.type}</td>
                         <td>{this.state.details2.price}</td>
                         <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
+                        <td><button className="btn"  onClick={() => this.handleClick('appointment')}>Schedule Appointment</button></td>
                     </tr>
                     <tr>
                         <td>Eye care</td>
@@ -108,13 +109,14 @@ class Details extends React.Component {
                         <td>General Checkup</td>
                         <td>230</td>
                         <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
+                        <td><button className="btn"  onClick={() => this.handleClick('appointment')}>Schedule Appointment</button></td>
                     </tr>
                 </table>
                  <Modal className="modal" open={open} onClose={this.onCloseModal} portalClassName = "modal" > 
                     <h2>Reviews</h2>
-                    <h4> ID : {this.state.reviews.userId} </h4>
-                    <h4>Name : {this.state.reviews.name}  </h4>
-                    <h4>Rating : {this.state.reviews.rating}  </h4>
+                    <h4> ID : {this.state.reviews.userId} TS123476 </h4>
+                    <h4>Name : {this.state.reviews.name} Tony Stark  </h4>
+                    <h4>Rating : {this.state.reviews.rating} 7 </h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                         pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet

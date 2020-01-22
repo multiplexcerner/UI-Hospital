@@ -1,6 +1,27 @@
 .loader {
     position: absolute;
     top: 50%;
-    bottom: 50%;
+    bottom: 65%;
+    left: 20%;
     transform: translate(50%, -50%); 
 }    
+
+.appointment h2{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    color: #77b300;
+}
+
+.appointment h5{
+    position: absolute;
+    top: 81%;
+    left: 39%;
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #77b300;
+}
