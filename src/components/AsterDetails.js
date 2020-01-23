@@ -19,7 +19,7 @@ class AsterDetails extends React.Component {
 
     componentDidMount() {
         let details;
-        axios.get('http://18.189.17.195:30082/package/1')
+        axios.get('http://18.217.149.46:30082/package/1')
             .then(response => {
                 details = response.data;
                 console.log('Response', details);
@@ -31,7 +31,7 @@ class AsterDetails extends React.Component {
    
 
         let reviews;
-        axios.get('http://18.189.17.195:30084/rating/1')
+        axios.get('http://18.217.149.46:30084/rating/1')
             .then(response => {
                 reviews = response.data;
                 console.log('Response', reviews);
@@ -53,6 +53,9 @@ class AsterDetails extends React.Component {
 
     render(){
         const { open } = this.state;
+        console.log('response' , this.state.details)
+        // const { details } = this.state; // Actual code
+        const details = [{"id":1,"name":"BASIC HEALTH SCREENING","description":"BASIC HEALTH SCREENING","type":"Body Vitals","price":"200","procedures":["Blood","Cholestrol","Sugar","Keratine"],"hospitalId":1},{"id":2,"name":"BASIC HEART CHECK","description":"BASIC HEART CHECK","type":"Cardiac","price":"150","procedures":["X-Ray","ESR"],"hospitalId":1},{"id":3,"name":"PRE CONCEPTION PACKAGE","description":"PRE CONCEPTION PACKAGE","type":"Gynecologist","price":"200","procedures":["Blood Grouping and Rh Factor","Blood Sugar - Fasting","Urine Routine"],"hospitalId":1},{"id":4,"name":"COMPREHENSIVE DIABETIC HEALTH CHECK","description":"COMPREHENSIVE DIABETIC HEALTH CHECK","type":"Diabetic-Basic","price":"150","procedures":["Serum Electrolytes","Serum Alkaline Phosphatase","Serum Phosphorus"],"hospitalId":1},{"id":5,"name":"EXECUTIVE DIABETIC HEALTH CHECK","description":"COMPREHENSIVE DIABETIC HEALTH CHECK","type":"Diabetic-Executive","price":"150","procedures":["Serum Electrolytes","Serum Creatinine","Blood Urea Nitrogen"],"hospitalId":1},{"id":6,"name":"SENIOR CITIZEN’S PROFILE","description":"SENIOR CITIZEN’S PROFILE","type":"Senior Citizens","price":"150","procedures":["Pap Smear (Females)","TMT or Echo","ECG"],"hospitalId":1}];
         return(
         <div>
             <div className ="CADetails">
@@ -68,27 +71,20 @@ class AsterDetails extends React.Component {
                         <th>Price($)</th>
                         <th>Reviews</th>
                     </tr>
-                    <tr>
-                        <td> {this.state.details.name} </td>
-                        <td>{this.state.details.description}</td>
-                        <td>{this.state.details.type}</td>
-                        <td>{this.state.details.price}</td>
-                        <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
-                    </tr>
-                    <tr>
-                        <td>Package Name2</td>
-                        <td>Description</td>
-                        <td>package Type</td>
-                        <td>250</td>
-                        <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
-                    </tr>
-                    <tr>
-                        <td>Package Name2</td>
-                        <td>Description</td>
-                        <td>package Type</td>
-                        <td>250</td>
-                        <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
-                    </tr>
+                    {
+                        details.map(({ name, description, type, price }) => {
+                            return (
+                            <tr>
+                                <td> {name} </td>
+                                <td>{description}</td>
+                                <td>{type}</td>
+                                <td>{price}</td>
+                                <td><button className="btn" onClick={this.onOpenModal}>Review1</button></td>
+                                <td><button className="btn"  onClick={() => this.handleClick('appointment')}>Schedule Appointment</button></td>
+                            </tr>
+                            );
+                        })
+                    }
                 </table>
                  <Modal className="modal" open={open} onClose={this.onCloseModal} portalClassName = "modal" > 
                     <h2>Reviews</h2>
